@@ -1,0 +1,84 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CourseP!cking</title>
+</head>
+
+<body>
+    
+</body>
+
+<template name="dashboardPage">
+    {{>baseNavbar}}
+     <div class="jumbotron">
+      <div class="container baseContent1">
+          <div class="row">
+            <div class="col-xs-4">
+                <div class="row">
+                    {{>savedCourses}}
+                </div>
+                <div class="row">
+                    {{>savedProfessors}}
+                </div>
+            </div>
+              
+            <div class="col-xs-8">
+                {{>timeline}}
+            </div>
+          </div>
+      </div>
+    </div>
+</template>
+
+<template name="savedCourses">
+    <div class="panel panel-success">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Saved Courses</div>
+  
+  
+
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+    
+  </ul>
+</div>
+</template>
+
+<template name="savedProfessors">
+     <div class="panel panel-success">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Saved Professors</div>
+  
+  
+
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+    
+  </ul>
+</div>
+</template>
+
+<template name="timeline">
+     <div class="panel panel-success">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Timeline of the dashboard</div>
+  
+  
+
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item">1 minute ago Freddie also liked intro to cams</li>
+    <li class="list-group-item">2 weeks ago Mary also commented on intro to cs</li>
+    <li class="list-group-item">6 days ago Tom also liked prof Amy</li>
+    <li class="list-group-item">1 minute ago Jack also liked intro to statistics</li>
+    <li class="list-group-item">2 weeks ago Mary also commented on intro to art history</li>
+    <li class="list-group-item">6 days ago Tom also liked prof Jeff</li>
+    
+  </ul>
+</div>
+</template>
