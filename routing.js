@@ -1,36 +1,35 @@
-
-
-Router.route("/", function(){
-    this.layout("appLayout");
-    this.render("checkIfLogin");
+Router.configure({
+    layoutTemplate: "appLayout"
 });
 
-Router.route("/courses", function(){
-    this.layout("appLayout");
-    this.render("afterFirstLoginPage");
+
+Router.route("/", {
+    name : "home",
+    template : "check"
+    
 });
 
-Router.route("/search", function(){
-    this.layout("appLayout");
-    this.render("searchPage");
+Router.route("/search", {
+    name : "search",
+    template : "searchPage"
 });
 
-Router.route("/reviewpost", function(){
-    this.layout("appLayout");
-    this.render("reviewPostPage");
+Router.route("/reviewpost", {
+    name : "reviewPost",
+    template : "reviewPostPage"
 });
 
-Router.route("/dashboard", function(){
-    this.layout("appLayout");
-    this.render("dashboardPage");
+Router.route("/dashboard", {
+    name : "dashboard",
+    template : "dashboardPage"
 });
 
-Router.route("/books", function(){
-    this.layout("appLayout");
-    this.render("booksPage");
+Router.route("/books",{
+    name : "books",
+    template : "booksPage"
 });
 
-Router.route("/latestquestions", function(){
-    this.layout("appLayout");
-    this.render("latestQuestionsPage");
+Router.route("/latestquestions", {
+    name : "latestquestions",
+    template : "latestQuestionsPage"
 });

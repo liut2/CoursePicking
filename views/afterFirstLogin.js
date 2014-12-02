@@ -1,4 +1,4 @@
-Courses = new Meteor.Collection("courses");
+
 
 if (Meteor.isClient) {
     Template.listOfCourses.helpers({
@@ -8,6 +8,13 @@ if (Meteor.isClient) {
         }
     });
   
+    Template.logout.events({
+        "click .logout" : function(e,t){
+            e.preventDefault();
+            Meteor.logout();
+            console.log("logout");
+        }
+    });
 }
 
 if (Meteor.isServer) {

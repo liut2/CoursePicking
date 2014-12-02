@@ -7,20 +7,29 @@
 
 </body>
 
+<template name="department">
+    <option class="{{department}}">{{department}}</option>
+</template>
+
+<template name="selectOne">
+    
+</template>
 <template name="findBooks">
     <h4>Find books here!</h4>
     <form role="form">
         <label for="booksQ1">department</label>
-        <select class="form-control" id="booksQ1">
-            <option value="volvo">computer science</option>
-            <option value="saab">mathematics</option>
-
+        <select multiple class="form-control" id="booksQ1">
+            {{#each departments}}
+                {{>department}}
+            {{/each}}
         </select>
-
+        
         <label for="booksQ2">course</label>
-        <select class="form-control" id="booksQ2">
-            <option value="volvo">calculus 2</option>
-            <option value="saab">mathematics 1</option>
+        <select multiple class="form-control" id="booksQ2">
+            {{#each courses_books}}
+                 <option value="{{this}}">{{this}}</option>
+            {{/each}}
+            
 
         </select>
         <p>We will send an email to the person who is selling the book and keep you in touch.</p>
@@ -83,7 +92,19 @@
     <div class="container">
         <div class="jumbotron">
             <div class="container baseContent1 ">
-                {{>reviewPostContent}}
+                <div class="row">
+                    <div class="col-xs-5">
+                        {{>findBooks}}
+                    </div>
+                    <div class="col-xs-2 or">
+                        <p class="or">OR</p>
+                    </div>
+                    <div class="col-xs-5">
+                        {{>sellBooks}}
+                    </div>
+                </div>
+                
+                
             </div>
         </div>
     </div>
