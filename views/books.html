@@ -17,11 +17,22 @@
         <label for="booksQ1">Course</label>
         {{> inputAutocomplete settings=settings id="booksQ1" class="input-xlarge form-control" placeholder="course..."}}
         <p>We will send an email to the person who is selling the book and keep you in touch.</p>
-
-        <button type="submit" class="btn btn-success">Search</button>
+        <Button type="submit" class="btn btn-success">Search</Button>
+        
 
     </form>
 </template>
+
+<template name="success">
+     {{>baseNavbar}}
+    <div class="jumbotron">
+        <div class="container baseContent1">
+            <p id="success">You have successfully submitted the form!</p>
+        </div>
+    </div>
+    
+</template>
+
 <!-- template for sellBooks section-->
 <template name="sellBooks">
     <h4>Sell books here!</h4>
@@ -46,11 +57,13 @@
         </div>
 
         <p>If someone is interested in your book, we will send you an email</p>
-
+        
         <button type="submit" class="btn btn-success">Sell</button>
-
+        
     </form>
 </template>
+
+
 <template name="booksPage">
     {{>baseNavbar}}
 

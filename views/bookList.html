@@ -1,0 +1,44 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CourseP!cking</title>
+</head>
+
+<body>
+
+</body>
+
+<template name="bookListPage">
+    {{>baseNavbar}}
+    <div class="jumbotron">
+        <div class="container baseContent1">
+            {{>bookListContent}}
+        </div>
+    </div>
+</template>
+
+<template name="bookListContent">
+    <h4>Books you are looking for</h4>
+    <div class="panel panel-default">
+        <!-- List group -->
+        <ul class="list-group">
+            {{#each bookList}}
+            <li class="list-group-item">
+               {{>bookItem}}
+             </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
+<template name="bookItem">
+    <div class="row">
+        <div class="col-xs-6">
+            <p>{{username}} is selling <em>{{bookName}}</em> at ${{price}}</p>
+        </div>
+        <div class="col-xs-4">
+            <p>book condition: {{condition}} </p>
+        </div>
+        <div class="col-xs-2">
+            <button type="submit" class="btn btn-success contact">contact</button>
+        </div>
+    </div>
+</template>

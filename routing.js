@@ -2,6 +2,14 @@ Router.configure({
     layoutTemplate: "appLayout"
 });
 
+Router.route("/success",{
+    name : "success",
+    template : "success"
+});
+Router.route("/booklist",{
+    name: "booklist",
+    template: "bookListPage"
+});
 
 Router.route("/", {
     name : "home",
