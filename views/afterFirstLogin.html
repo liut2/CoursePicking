@@ -20,14 +20,14 @@
             <li class="list-group-item">
                 <div class="row listOfCourses">
                     <div class="col-xs-8">
-                        {{>course}}
+                         <p><span class="review_course">{{course}}</span> by <span class="review_professor">{{professor}}</span></p>
                     </div>
                     <div class="col-xs-1">
-                        <span class="badge">14</span>
+                        <span class="badge">{{countPost}}</span>
                     </div>
                     <div class="col-xs-3">
-                        <button type="submit" class="btn btn-success">contribute</button>
-                        <button type="submit" class="btn btn-success">view</button>
+                        <button type="submit" class="btn btn-success contribute">contribute</button>
+                        <button type="submit" class="btn btn-success view">view</button>
                     </div>
                 </div>
             </li>
@@ -37,9 +37,7 @@
 
 </template>
 <!-- template for a course-->
-<template name="course">
-    <p>{{course}} by {{professor}}</p>
-</template>
+
 <!-- template for after login content-->
 <template name="afterFirstLoginContent">
     <h4>I know you are a CS major, would you like to do other Carls a favor and review those courses you have taken?</h4>

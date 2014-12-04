@@ -1,4 +1,9 @@
 if (Meteor.isClient) {
+    Template.success.events({
+        "click Button" : function(t,e){
+            Router.go("home");
+        }
+    });
     Template.findBooks.helpers({
         settings: function () {
             return {

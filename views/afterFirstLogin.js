@@ -26,7 +26,22 @@ if (Meteor.isClient) {
             return Courses.find({department: "computer science"}, {sort : {professor : 1, course : 1}});
         }
     });
-  
+    
+    Template.listOfCourses.events({
+        "click .contribute" : function(t,e){
+             console.log("reviewpost");
+            var course = this.course;
+            var professor = this.professor;
+            console.log(course);
+            console.log(professor);
+            Session.set("review_course", course);
+            Session.set("review_professor", professor);
+            console.log("reviewpost");
+            Router.go("reviewPost");
+        }
+       
+    });
+    
     Template.logout.events({
         "click .logout" : function(e,t){
             e.preventDefault();
