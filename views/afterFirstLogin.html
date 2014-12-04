@@ -71,11 +71,11 @@
                 </ul>
                 <form class="navbar-form navbar-right" role="form">
                     <div class="form-group">
-                        <input type="text" placeholder="course/professor" class="form-control">
+                        {{> inputAutocomplete settings=settings placeholder="course..." class="input-xlarge form-control" placeholder="course..."}}
+                        
                     </div>
 
-                    <a href="{{pathFor 'search'}}" class="btn btn-success">Search course</a>
-                    <a href="{{pathFor 'search'}}" class="btn btn-success">Search professor</a>
+                    <a href="{{pathFor 'search'}}" class="btn btn-success">Search course</a>    
                 </form>
             </div>
             <!--/.navbar-collapse -->

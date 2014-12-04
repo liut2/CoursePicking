@@ -9,6 +9,11 @@ Router.route("/", {
     
 });
 
+Router.route("/auto",{
+    name: "auto",
+    template: "auto"
+});
+
 Router.route("/search", {
     name : "search",
     template : "searchPage"

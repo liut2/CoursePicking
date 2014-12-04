@@ -6,63 +6,28 @@
 <body>
 
 </body>
-
-<template name="department">
-    <option class="{{department}}">{{department}}</option>
+<!-- template for rendering the autocompleting result-->
+<template name="render">
+    {{course}}
 </template>
-
-<template name="selectOne">
-    
-</template>
+<!-- template for findBooks section-->
 <template name="findBooks">
     <h4>Find books here!</h4>
     <form role="form">
-        <label for="booksQ1">department</label>
-        <select multiple class="form-control" id="booksQ1">
-            {{#each departments}}
-                {{>department}}
-            {{/each}}
-        </select>
-        
-        <label for="booksQ2">course</label>
-        <select multiple class="form-control" id="booksQ2">
-            {{#each courses_books}}
-                 <option value="{{this}}">{{this}}</option>
-            {{/each}}
-            
-
-        </select>
+        <label for="booksQ1">Course</label>
+        {{> inputAutocomplete settings=settings id="booksQ1" class="input-xlarge form-control" placeholder="course..."}}
         <p>We will send an email to the person who is selling the book and keep you in touch.</p>
 
         <button type="submit" class="btn btn-success">Search</button>
 
     </form>
 </template>
+<!-- template for sellBooks section-->
 <template name="sellBooks">
     <h4>Sell books here!</h4>
     <form role="form">
-        <label for="booksQ1">department</label>
-        <select class="form-control" id="booksQ1">
-            <option value="volvo">computer science</option>
-            <option value="saab">mathematics</option>
-
-        </select>
-
-        <label for="booksQ2">course</label>
-        <select class="form-control" id="booksQ2">
-            <option value="volvo">calculus 2</option>
-            <option value="saab">mathematics 1</option>
-
-        </select>
-
-        <label for="booksQ3">professor</label>
-        <select id="booksQ3" class="form-control">
-            <option value="volvo">Jeff</option>
-            <option value="saab">Amy</option>
-
-        </select>
-
-
+        <label for="booksQ2">Course</label>
+        {{> inputAutocomplete settings=settings id="booksQ2" class="input-xlarge form-control" placeholder="course..."}}
         <div class="form-group">
             <label for="booksQ4">name of the book</label>
             <input type="text" class="form-control" id="booksQ4" />
