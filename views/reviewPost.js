@@ -1,23 +1,23 @@
 if (Meteor.isClient){
     Template.reviewPostContent.helpers({
-        review_course : function(){
-            return Session.get("review_course");
+        contribute_course : function(){
+            return Session.get("contribute_course");
         },
-        review_professor : function(){
-            return Session.get("review_professor");
+        contribute_professor : function(){
+            return Session.get("contribute_professor");
         }
     });
     
     Template.reviewPostContent.events({
         "submit form" : function(e,t){
             e.preventDefault();
-            var answer1 = t.find("#reviewQ1").value;
-            var answer2 = t.find("#reviewQ2").value;
-            var answer3 = t.find("#reviewQ3").value;
-            var answer4 = t.find("#reviewQ4").value;
-            var answer5 = t.find("#reviewQ5").value;
-            var course = Session.get("review_course");
-            var professor = Session.get("review_professor");
+            var answer1 = t.find("#reviewQ1").value.trim();
+            var answer2 = t.find("#reviewQ2").value.trim();
+            var answer3 = t.find("#reviewQ3").value.trim();
+            var answer4 = t.find("#reviewQ4").value.trim();
+            var answer5 = t.find("#reviewQ5").value.trim();
+            var course = Session.get("contribute_course");
+            var professor = Session.get("contribute_professor");
             var userId = Meteor.userId();
             var username = Meteor.user().profile.username;
             ReviewPost.insert({

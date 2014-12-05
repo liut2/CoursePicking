@@ -1,6 +1,11 @@
 
 
 if (Meteor.isClient) {
+    Template.afterFirstLoginContent.helpers({
+        major : function(){
+            return Meteor.user().profile.major;
+        }
+    });
     Template.baseNavbar.helpers({
         settings: function () {
             return {
@@ -34,10 +39,20 @@ if (Meteor.isClient) {
             var professor = this.professor;
             console.log(course);
             console.log(professor);
-            Session.set("review_course", course);
-            Session.set("review_professor", professor);
+            Session.set("contribute_course", course);
+            Session.set("contribute_professor", professor);
             console.log("reviewpost");
             Router.go("reviewPost");
+        },
+        "click .view" : function(t,e){
+            console.log("view");
+            var course = this.course;
+            var professor = this.professor;
+            console.log(course);
+            console.log(professor);
+            Session.set("view_course", course);
+            Session.set("view_professor", professor);
+            Router.go("postList");
         }
        
     });
@@ -47,6 +62,7 @@ if (Meteor.isClient) {
             e.preventDefault();
             Meteor.logout();
             console.log("logout");
+            Router.go("home");
         }
     });
 }

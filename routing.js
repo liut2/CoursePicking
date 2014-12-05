@@ -2,6 +2,10 @@ Router.configure({
     layoutTemplate: "appLayout"
 });
 
+Router.route("/postlist", {
+    name : "postList",
+    template: "postListPage"
+});
 Router.route("/success",{
     name : "success",
     template : "success"
