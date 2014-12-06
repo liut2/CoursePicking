@@ -31,3 +31,8 @@ a:link{
 .vote {
     text-align: center;
 }
+.voteGroup{
+    text-align: center;
+    
+    vertical-align:middle;
+}

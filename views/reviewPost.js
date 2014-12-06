@@ -20,7 +20,9 @@ if (Meteor.isClient){
             var professor = Session.get("contribute_professor");
             var userId = Meteor.userId();
             var username = Meteor.user().profile.username;
+            var createdByEmail = Meteor.user().emails[0].address;
             ReviewPost.insert({
+                createdByEmail : createdByEmail,
                 createdBy : userId,
                 username : username,
                 course : course,

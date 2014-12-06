@@ -40,5 +40,31 @@ if (Meteor.isClient){
             var voteSum = voteUp + voteDown;
             ReviewPost.update({_id : id}, {$set : {voteSum : voteSum}});
         }
+        
+        
+    });
+    Template.askkk.events({
+        "click Button.askHim" : function(e,t){
+            var createdByEmail = this.createdByEmail;
+            var course = this.course;
+            
+            var question = t.find("#askYou").value.trim();
+            
+            
+            var currentEmail = Meteor.user().emails[0].address;
+            var CurrentUsername = Meteor.user().profile.username;
+            
+            
+            var to      = createdByEmail;
+            var subject = "Would you like to help answer the question asked by "+CurrentUsername+" of the course "+course;
+            var text    = "Here is the question: "+question+" Could you reply to his/her email: "+currentEmail+" directly and answer the question? Thank you very much!      --Sent from coursepicking.com";
+            console.log(currentEmail);
+            Meteor.call("email", to, subject, text);
+            
+            Router.go("success");
+            
+            
+            
+        }
     });
 }

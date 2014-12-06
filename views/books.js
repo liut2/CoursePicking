@@ -42,7 +42,10 @@ if (Meteor.isClient) {
                 var price = t.find("#booksQ6").value;
                 var userId = Meteor.userId();
                 var username = Meteor.user().profile.username;
+                var soldByEmail = Meteor.user().emails[0].address;
+                console.log("soldbyemial "+ soldByEmail);
                 Books.insert({
+                    soldByEmail : soldByEmail,
                     soldBy : userId,
                     username : username,
                     course : course,

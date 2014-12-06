@@ -1,29 +1,29 @@
-db.courses.insert({department: "computer science", course: "introduction to cs", professor: "amy"});
+db.courses.insert({department: "computer science", course: "introduction to cs", professor: "amy", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "computer science", course: "data structures", professor: "amy"});
+db.courses.insert({department: "computer science", course: "data structures", professor: "amy", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "computer science", course: "math of cs", professor: "amy"});
+db.courses.insert({department: "computer science", course: "math of cs", professor: "amy", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "computer science", course: "introduction to cs", professor: "jeff"});
+db.courses.insert({department: "computer science", course: "introduction to cs", professor: "jeff", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "computer science", course: "data structures", professor: "jeff"});
+db.courses.insert({department: "computer science", course: "data structures", professor: "jeff", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "computer science", course: "math of cs", professor: "jeff"});
+db.courses.insert({department: "computer science", course: "math of cs", professor: "jeff", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "computer science", course: "introduction to cs", professor: "andy"});
+db.courses.insert({department: "computer science", course: "introduction to cs", professor: "andy", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "mathematics", course: "calculus 1", professor: "tommy"});
+db.courses.insert({department: "mathematics", course: "calculus 1", professor: "tommy", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "mathematics", course: "calculus 2", professor: "tommy"});
+db.courses.insert({department: "mathematics", course: "calculus 2", professor: "tommy", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "mathematics", course: "calculus 3", professor: "tommy"});
+db.courses.insert({department: "mathematics", course: "calculus 3", professor: "tommy", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "mathematics", course: "calculus 1", professor: "jack"});
+db.courses.insert({department: "mathematics", course: "calculus 1", professor: "jack", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "mathematics", course: "calculus 2", professor: "jack"});
+db.courses.insert({department: "mathematics", course: "calculus 2", professor: "jack", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "mathematics", course: "calculus 3", professor: "jack"});
+db.courses.insert({department: "mathematics", course: "calculus 3", professor: "jack", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "mathematics", course: "calculus 1", professor: "eric"});
+db.courses.insert({department: "mathematics", course: "calculus 1", professor: "eric", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});
 
-db.courses.insert({department: "mathematics", course: "calculus 2", professor: "eric"});
+db.courses.insert({department: "mathematics", course: "calculus 2", professor: "eric", voteUp : 0, voteDown : 0, voteSum : 0, countPost : 0});

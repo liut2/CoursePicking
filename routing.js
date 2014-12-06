@@ -2,10 +2,20 @@ Router.configure({
     layoutTemplate: "appLayout"
 });
 
+Router.route("/askquestions", {
+    name : "askquestions",
+    template : "askQuestionsPage"
+});
+
+Router.route("/email", {
+    name : "email",
+    template : "emailForm"
+});
 Router.route("/postlist", {
     name : "postList",
     template: "postListPage"
 });
+
 Router.route("/success",{
     name : "success",
     template : "success"

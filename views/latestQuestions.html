@@ -4,79 +4,51 @@
 </head>
 
 <body>
-    
+
 </body>
 
 <template name="latestQuestionsPage">
     {{>baseNavbar}}
-    
-     <div class="jumbotron">
-      <div class="container baseContent1">
-          {{>ask}}
-         
-      </div>
+
+    <div class="jumbotron">
+        <div class="container baseContent1">
+            {{>ask}}
+
+        </div>
     </div>
-    
+
 </template>
-  
+
 <template name="ask">
     <h4>Have questions to ask?</h4>
     <form role="form">
         <div class="row">
-            <div class="col-xs-4">
-        <label for="latestQ1">department</label>
-        <select class="form-control" id="latestQ1">
-            <option >computer science</option>
-            <option >mathematics</option>
-
-        </select>
-            </div>
-             <div class="col-xs-4">
-        <label for="latestQ2">course</label>
-        <select class="form-control" id="latestQ2">
-            <option >calculus 2</option>
-            <option >mathematics 1</option>
-
-        </select>
-            </div>
-             <div class="col-xs-4">
-        <label for="latestQ3">professor</label>
-        <select id="latestQ3" class="form-control">
-            <option >Jeff</option>
-            <option >Amy</option>
-
-        </select>
-            </div>
-        
-        </div>
-        <div class="row">
             <div class="col-xs-12">
                 <div class="form-group">
-                <label for="latestQ4">question</label>
-                <input type="text" class="form-control" id="latestQ4" placeholder="Ask question here"/>
+                    <input type="text" class="form-control" id="latestQ5" placeholder="Ask question here." />
 
                 </div>
             </div>
             <div class="col-xs-2">
-               
-                <button type="submit" class="btn btn-success ask">Ask</button>
+                <button type="submit" class="btn btn-success " id="askInLatest">Ask</button>
             </div>
-            
+
         </div>
-        
+
     </form>
     <br>
-    <h4> Or join the discussions below!</h4>
-    {{>listOfCourses}}
-</template>
-
-
-
-<template name="latestContent">
     <div class="container">
-    <h4></h4>
-    <p>Or join the discussions below!</p>
+        <p>Or join the discussions below!</p>
     </div>
+    <ul class="list-group">
+        {{#each latestQuestions}} 
+            <li class="list-group-item">
+                {{question}}
+            </li>
+        {{/each}}
+    </ul>
+    
     
 </template>
+
 

@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    
+
 </body>
 
 <template name="postListPage">
@@ -13,16 +13,14 @@
         <div class="container baseContent1">
             <div class="panel panel-default">
                 <!-- Default panel contents -->
-               
+
                 <div class="panel-body">
                     <p>Course reviews for {{view_course}} by {{view_professor}}:</p>
                 </div>
-                
+
                 <!-- List group -->
                 <ul class="list-group">
-                    {{#each postList}}
-                        {{>post}}
-                    {{/each}}
+                    {{#each postList}} {{>post}} {{/each}}
                 </ul>
             </div>
         </div>
@@ -33,22 +31,34 @@
     <li class="list-group-item">
         <div class="row">
             <div class="col-xs-10">
-                 <b>{{username}}'s review:</b> {{answer1}} {{answer2}} {{answer3}} {{answer4}} {{answer5}}
+                <p><b>{{username}}'s review:</b> {{answer1}} {{answer2}} {{answer3}} {{answer4}} {{answer5}}</p>
+                {{>askkk}}
             </div>
-            <div class="col-xs-1">
-                <div class="vote">
-                <Button type="submit" class="btn btn-success voteUp"><span class="glyphicon glyphicon-thumbs-up"></span></Button><span class="badge">{{voteUp}}</span>
+            <div class="voteGroup">
+                <div class="col-xs-1">
+                    <div class="vote">
+                        <Button type="submit" class="btn btn-default voteUp"><span class="glyphicon glyphicon-thumbs-up"></span>
+                        </Button><span class="badge">{{voteUp}}</span>
+                    </div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="vote">
+                        <Button type="submit" class="btn btn-default voteDown"><span class="glyphicon glyphicon-thumbs-down"></span>
+                        </Button><span class="badge">{{voteDown}}</span>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-1">
-                <div class="vote">
-                <Button type="submit" class="btn btn-success voteDown"><span class="glyphicon glyphicon-thumbs-down"></span></Button><span class="badge">{{voteDown}}</span>
-                </div>
-            </div>
-            
         </div>
-        
     </li>
 </template>
 
-
+<template name="askkk">
+    <div class="row">
+        <div class="col-xs-10">
+            <input type="text" class="form-control" id="askYou" placeholder="Ask question here and we will send your question and get you in touch through email" />
+        </div>
+        <div class="col-xs-2">
+            <Button type="submit" class="btn btn-success askHim">Ask</Button>
+        </div>
+    </div>
+</template>
