@@ -46,11 +46,6 @@ Router.route("/reviewpost", {
     template : "reviewPostPage"
 });
 
-Router.route("/dashboard", {
-    name : "dashboard",
-    template : "dashboardPage"
-});
-
 Router.route("/books",{
     name : "books",
     template : "booksPage"

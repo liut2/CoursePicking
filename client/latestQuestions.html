@@ -1,12 +1,3 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CourseP!cking</title>
-</head>
-
-<body>
-
-</body>
-
 <template name="latestQuestionsPage">
     {{>baseNavbar}}
 
@@ -43,7 +34,26 @@
     <ul class="list-group">
         {{#each latestQuestions}} 
             <li class="list-group-item">
-                {{question}}
+                <div class="row">
+                    <div class="col-xs-10">
+                        <p>{{question}}</p>
+                        <ul>
+                            {{#each comments}}
+                                <li>{{username}}: {{comment}}</li>
+                            {{/each}}
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control commentContent"  placeholder="write your comment here" /> 
+                    </div>
+                    <div class="col-xs-2">
+                        <Button type="submit" class="btn btn-success comment">comment</Button>
+                    </div>
+                </div>
+                
             </li>
         {{/each}}
     </ul>

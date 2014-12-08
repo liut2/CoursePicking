@@ -1,20 +1,11 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CourseP!cking</title>
-</head>
-
-<body>
-
-</body>
-
 <template name="postListPage">
     {{>baseNavbar}}
     <div class="jumbotron">
         <div class="container baseContent1">
-            <div class="panel panel-default">
+            <div class="panel panel-success">
                 <!-- Default panel contents -->
 
-                <div class="panel-body">
+                <div class="panel-heading">
                     <p>Course reviews for {{view_course}} by {{view_professor}}:</p>
                 </div>
 
@@ -30,23 +21,36 @@
 <template name="post">
     <li class="list-group-item">
         <div class="row">
-            <div class="col-xs-10">
+            <div class="col-xs-9">
                 <p><b>{{username}}'s review:</b> {{answer1}} {{answer2}} {{answer3}} {{answer4}} {{answer5}}</p>
-                {{>askkk}}
+                
             </div>
+        </div>
+        <div class="row">
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" id="askYou" placeholder="Ask question here and we will send your question and get you in touch through email" />
+                </div>
             <div class="voteGroup">
                 <div class="col-xs-1">
+                    <Button type="submit" class="btn btn-success askHim">Ask</Button>
+                </div>
+                <div class="col-xs-1">
                     <div class="vote">
-                        <Button type="submit" class="btn btn-default voteUp"><span class="glyphicon glyphicon-thumbs-up"></span>
-                        </Button><span class="badge">{{voteUp}}</span>
+                        <div class="row">
+                        <Button type="submit" class="btn btn-default voteUp"><span class="glyphicon glyphicon-thumbs-up"></span></Button>
+                        </div>
+                        <div class="row"><span class="badge">{{voteUp}}</span></div>
                     </div>
                 </div>
                 <div class="col-xs-1">
                     <div class="vote">
-                        <Button type="submit" class="btn btn-default voteDown"><span class="glyphicon glyphicon-thumbs-down"></span>
-                        </Button><span class="badge">{{voteDown}}</span>
+                        <div class="row">
+                        <Button type="submit" class="btn btn-default voteDown"><span class="glyphicon glyphicon-thumbs-down"></span></Button>
+                        </div>
+                        <div class="row"><span class="badge">{{voteDown}}</span></div>
                     </div>
                 </div>
+               
             </div>
         </div>
     </li>

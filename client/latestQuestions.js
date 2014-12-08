@@ -2,6 +2,10 @@ if (Meteor.isClient){
     Template.ask.helpers({
         latestQuestions : function(){
             return LatestQuestion.find({});
+        },
+        comments : function(){
+            var question = this.question;
+            return Discussion.find({question : question});
         }
     });
     
@@ -11,6 +15,18 @@ if (Meteor.isClient){
             LatestQuestion.insert({
                 question : question
             });
+        },
+        "click .comment" : function(e,t){
+            var comment = t.find(".commentContent").value;
+            var question = this.question;
+            var username = Meteor.user().profile.username;
+            Discussion.insert(
+                {question : question,
+                 comment : comment,
+                 username : username
+                }
+            );
+            
         }
     });
 }

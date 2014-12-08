@@ -16,7 +16,10 @@
   margin-bottom: 10px;
    
 }
-
+.wishlistCourse a:link{
+    color:black;
+    text-decoration:underline;
+}
 a:link{
  color:black;
  text-decoration:none;

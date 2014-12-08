@@ -15,7 +15,7 @@ if (Meteor.isClient){
     
     
     Template.post.events({
-        "click .voteUp" : function(t,e){
+        "click .voteUp" : function(e,t){
             var course = this.course;
             var professor = this.professor;
             var createdBy = this.createdBy;
@@ -27,7 +27,7 @@ if (Meteor.isClient){
             ReviewPost.update({_id : id}, {$set : {voteSum : voteSum}});
         },
         
-        "click .voteDown" : function(t,e){
+        "click .voteDown" : function(e,t){
             var course = this.course;
             var professor = this.professor;
             console.log(course);
@@ -39,11 +39,7 @@ if (Meteor.isClient){
             var voteDown = ReviewPost.find({_id : id}).voteDown;
             var voteSum = voteUp + voteDown;
             ReviewPost.update({_id : id}, {$set : {voteSum : voteSum}});
-        }
-        
-        
-    });
-    Template.askkk.events({
+        },
         "click Button.askHim" : function(e,t){
             var createdByEmail = this.createdByEmail;
             var course = this.course;
@@ -66,5 +62,8 @@ if (Meteor.isClient){
             
             
         }
+        
+        
     });
+   
 }

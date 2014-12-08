@@ -1,27 +1,36 @@
 if (Meteor.isClient) {
-    Template.searchCourse.helpers({
-        selectedCourses : function(){
-            console.log(Courses.find({professor: "Tom"}, {sort : {professor : 1, course : 1}}).count());
-            return Courses.find({course: "calculus 3"}, {sort : {professor : 1, course : 1}});
+    Template.baseNavbar.events({
+        "click .search" : function(e,t){
+            var course = t.find("#searchCourse").value;
+            Session.set("searchCourse", course);
+            Router.go("search");
         }
     });
-    
+    Template.searchCourse.helpers({
+        selectedCourses : function(){
+            var course = Session.get("searchCourse");
+            return Courses.find({course: course}, {sort : {professor : 1}});
+        }
+    });
+    Template.searchCourse.events({
+        "click .addToWishlist" : function(e,t){
+            var course = this.course;
+            var professor = this.professor;
+            var userId = Meteor.userId();
+            console.log(userId);
+            Wishlist.insert(
+                {course : course,
+                 professor : professor,
+                 addedBy : userId
+                }
+            );
+            Router.go("success");
+        }
+    });
     Template.recommendCourses.helpers({
         recommendCourses : function(){
             return Courses.find({}, {sort : {professor : 1, course : 1}});
         }
     });
   
-    Template.recommendProfessors.helpers({
-        recommendCourses : function(){
-            return Courses.find({}, {sort : {professor : 1, course : 1}});
-        }
-    });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-   
-  
-  });
 }

@@ -1,14 +1,9 @@
-<head>
+<!-- the global layout for the webapp-->
+<template name="appLayout">
+    <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CourseP!cking</title>
 </head>
-
-<body>
-
-</body>
-
-<!-- the global layout for the webapp-->
-<template name="appLayout">
     {{>yield}}
 </template>
 
@@ -18,7 +13,7 @@
 </template>
 <!-- the template for checking if user has logged in-->
 <template name="check">
-    {{#if currentUser}} {{>afterFirstLoginPage}} {{else}} {{>loginPage}} {{/if}}
+    {{#if currentUser}} {{>dashboardPage}} {{else}} {{>loginPage}} {{/if}}
 </template>
 <!-- the login form template-->
 <template name="login">
