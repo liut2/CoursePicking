@@ -15,8 +15,8 @@ if (Meteor.isClient){
     });
     Template.listOfCourses.helpers({
         courses : function(){
-            var major = Session.get("currentMajor");
-            return Courses.find({department: "computer science"}, {sort : {professor : 1, course : 1}});
+            var major = Meteor.user().profile.major;
+            return Courses.find({department: major}, {sort : {course : 1}});
         }
     });
     
@@ -25,10 +25,12 @@ if (Meteor.isClient){
              console.log("reviewpost");
             var course = this.course;
             var professor = this.professor;
+            var department = this.department;
             console.log(course);
             console.log(professor);
             Session.set("contribute_course", course);
             Session.set("contribute_professor", professor);
+            Session.set("contribute_department",department);
             console.log("reviewpost");
             Router.go("reviewPost");
         },

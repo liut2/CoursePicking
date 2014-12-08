@@ -2,7 +2,9 @@ if (Meteor.isClient) {
     Template.baseNavbar.events({
         "click .search" : function(e,t){
             var course = t.find("#searchCourse").value;
+            
             Session.set("searchCourse", course);
+            course = "";
             Router.go("search");
         }
     });
@@ -28,8 +30,17 @@ if (Meteor.isClient) {
         }
     });
     Template.recommendCourses.helpers({
+        department : function(){
+            var course = Session.get("searchCourse");
+            var department = Courses.findOne({course : course}).department;
+            console.log(department + "  "+course);
+            Session.set("searchDepartment",department);
+           
+            return department
+        },
         recommendCourses : function(){
-            return Courses.find({}, {sort : {professor : 1, course : 1}});
+            var department = Session.get("searchDepartment");
+            return Courses.find({department : department}, {sort : {professor : 1, course : 1}});
         }
     });
   

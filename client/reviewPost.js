@@ -18,6 +18,7 @@ if (Meteor.isClient){
             var answer5 = t.find("#reviewQ5").value.trim();
             var course = Session.get("contribute_course");
             var professor = Session.get("contribute_professor");
+            var department = Session.get("contribute_department");
             var userId = Meteor.userId();
             var username = Meteor.user().profile.username;
             var createdByEmail = Meteor.user().emails[0].address;
@@ -33,7 +34,7 @@ if (Meteor.isClient){
                 answer4 : answer4,
                 answer5 : answer5
             });
-            var id = Courses.findOne({course : course, professor : professor})._id;
+            var id = Courses.findOne({course : course, professor : professor, department : department})._id;
             console.log("reviewed succussfully");
             Courses.update({_id : id},
                            {$inc : {countPost : 1}}

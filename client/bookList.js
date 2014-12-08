@@ -14,6 +14,7 @@ if (Meteor.isClient){
             var text    = CurrentUsername+" wants to buy your textbook "+bookName+" .Here is his/her email address: "+CurrentEmail+" , you can directly contact him/her and get the deal done.       Sent from coursepicking.com";
             console.log(CurrentEmail);
             Meteor.call("email", to, subject, text);
+            Router.go("success");
         }
     });
     
